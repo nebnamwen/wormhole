@@ -56,17 +56,22 @@ public class Cursor extends Thing {
 
     public void update(double dt) {
 	// move
+	double delta = dt;
+	if (viewport.checkKey(KeyEvent.VK_SHIFT)) {
+	    delta *= 2;
+	}
+
         if (viewport.checkKey(KeyEvent.VK_UP)) {
-            position = position.comp(Mo.Translate(dt,0));
+            position = position.comp(Mo.Translate(delta,0));
         }
         if (viewport.checkKey(KeyEvent.VK_DOWN)) {
-            position = position.comp(Mo.Translate(-dt,0));
+            position = position.comp(Mo.Translate(-delta,0));
         }
         if (viewport.checkKey(KeyEvent.VK_RIGHT)) {
-            position = position.comp(Mo.Rotate(dt));
+            position = position.comp(Mo.Rotate(delta));
         }
         if (viewport.checkKey(KeyEvent.VK_LEFT)) {
-            position = position.comp(Mo.Rotate(-dt));
+            position = position.comp(Mo.Rotate(-delta));
         }
 
 	// spawn things
