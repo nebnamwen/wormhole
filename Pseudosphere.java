@@ -27,7 +27,6 @@ public class Pseudosphere extends Space {
     }
 
     public double outerRim(double size) {
-	System.out.println(radius*Math.tanh(atanh(size/radius)+atanh(world.scale/radius)));
 	return radius*Math.tanh(atanh(size/radius)+atanh(world.scale/radius));
     }
 }
