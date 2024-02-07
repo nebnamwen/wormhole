@@ -95,7 +95,7 @@ public class Viewport extends JPanel implements KeyListener, ActionListener {
 
 	// circle is too big to accurately draw as an ellipse,
 	// approximate it as a line or parabola
-	if (circle.b.isInfinite() || circle.b.norm() > radius * 8 ) {
+	if (circle.b.isInfinite() || circle.b.sub(circle.a).norm() > radius * 8 ) {
 	    Cx normal = circle.c.sub(circle.a).unit();
 	    double length = circle.a.norm()+radius;
 	    Cx edge = normal.mult(length);

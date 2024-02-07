@@ -14,6 +14,9 @@ public class Demo extends World {
 	// the player's cursor, at the origin
 	cursor = new Cursor(s1, Mo.IDENTITY, null);
 
+	// a spot of color at a great distance to reproduce a bug
+	s1.addChild(Mo.Translate(50000,0), Color.orange);
+	
 	// a colorful mobius strip
 	Mo w1t = Mo.Translate(3,0);
 	BGDomain ring = s1.addChild(w1t.comp(Mo.Scale(1.08)), Color.yellow);
